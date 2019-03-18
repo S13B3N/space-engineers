@@ -31,26 +31,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sandbox.Common">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\Sandbox.Common.dll</HintPath>
+    <Reference Include="Sandbox.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\Sandbox.Common.dll</HintPath>
     </Reference>
-    <Reference Include="Sandbox.Game">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\Sandbox.Game.dll</HintPath>
+    <Reference Include="Sandbox.Game, Version=0.1.6922.26990, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\Sandbox.Game.dll</HintPath>
     </Reference>
-    <Reference Include="Sandbox.Graphics">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\Sandbox.Graphics.dll</HintPath>
+    <Reference Include="Sandbox.Graphics, Version=0.1.6922.26983, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\Sandbox.Graphics.dll</HintPath>
     </Reference>
-    <Reference Include="Sandbox.RenderDirect">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\Sandbox.RenderDirect.dll</HintPath>
+    <Reference Include="Sandbox.RenderDirect, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\Sandbox.RenderDirect.dll</HintPath>
     </Reference>
-    <Reference Include="SpaceEngineers.Game">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\SpaceEngineers.Game.dll</HintPath>
+    <Reference Include="SpaceEngineers.Game, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\SpaceEngineers.Game.dll</HintPath>
     </Reference>
-    <Reference Include="SpaceEngineers.ObjectBuilders">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\SpaceEngineers.ObjectBuilders.dll</HintPath>
+    <Reference Include="SpaceEngineers.ObjectBuilders, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\SpaceEngineers.ObjectBuilders.dll</HintPath>
     </Reference>
-    <Reference Include="SpaceEngineers.ObjectBuilders.XmlSerializers">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\SpaceEngineers.ObjectBuilders.XmlSerializers.dll</HintPath>
+    <Reference Include="SpaceEngineers.ObjectBuilders.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\SpaceEngineers.ObjectBuilders.XmlSerializers.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,56 +67,73 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="VRage">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.dll</HintPath>
+    <Reference Include="VRage, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Ansel">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Ansel.dll</HintPath>
+    <Reference Include="VRage.Ansel, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Ansel.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Audio">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Audio.dll</HintPath>
+    <Reference Include="VRage.Audio, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Audio.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Game">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Game.dll</HintPath>
+    <Reference Include="VRage.Game, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Game.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Game.XmlSerializers">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Game.XmlSerializers.dll</HintPath>
+    <Reference Include="VRage.Game.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Game.XmlSerializers.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Input">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Input.dll</HintPath>
+    <Reference Include="VRage.Input, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Input.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Library">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Library.dll</HintPath>
+    <Reference Include="VRage.Library, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Library.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Math">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Math.dll</HintPath>
+    <Reference Include="VRage.Math, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Math.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Math.XmlSerializers">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Math.XmlSerializers.dll</HintPath>
+    <Reference Include="VRage.Math.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Math.XmlSerializers.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Native">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Native.dll</HintPath>
+    <Reference Include="VRage.Native, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Native.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.NativeAftermath">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.NativeAftermath.dll</HintPath>
+    <Reference Include="VRage.NativeAftermath, Version=0.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.NativeAftermath.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.OpenVRWrapper">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.OpenVRWrapper.dll</HintPath>
+    <Reference Include="VRage.OpenVRWrapper, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.OpenVRWrapper.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Render">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Render.dll</HintPath>
+    <Reference Include="VRage.Render, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Render.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Render11">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Render11.dll</HintPath>
+    <Reference Include="VRage.Render11, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Render11.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Scripting">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Scripting.dll</HintPath>
+    <Reference Include="VRage.Scripting, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Scripting.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.Steam">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.Steam.dll</HintPath>
+    <Reference Include="VRage.Steam, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.Steam.dll</HintPath>
     </Reference>
-    <Reference Include="VRage.XmlSerializers">
-      <HintPath>..\..\Sieben\SVN\CSharp\branches\HipSpaceEngis\ThirdParty\SpaceEngiSDK\VRage.XmlSerializers.dll</HintPath>
+    <Reference Include="VRage.XmlSerializers, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ThirdParty\SpaceEngiSDK\VRage.XmlSerializers.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +147,32 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Playground\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ThirdParty\SpaceEngiSDK\Sandbox.Common.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\Sandbox.Game.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\Sandbox.Graphics.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\Sandbox.RenderDirect.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\SpaceEngineers.Game.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\SpaceEngineers.ObjectBuilders.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\SpaceEngineers.ObjectBuilders.XmlSerializers.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Ansel.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Audio.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Game.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Game.XmlSerializers.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Input.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Library.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Math.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Math.XmlSerializers.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Native.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.NativeAftermath.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.OpenVRWrapper.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Render.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Render11.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Scripting.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.Steam.dll" />
+    <Content Include="ThirdParty\SpaceEngiSDK\VRage.XmlSerializers.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
