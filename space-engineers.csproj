@@ -141,13 +141,12 @@
     <Compile Include="Common\Snippets.cs" />
     <Compile Include="Interface\IMainProgram.cs" />
     <Compile Include="Interface\ISmallMainProgram.cs" />
+    <Compile Include="Playground\AutoRefinery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Scripts\Dockyard.cs" />
     <Compile Include="Scripts\WelderShip.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Playground\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="ThirdParty\SpaceEngiSDK\Sandbox.Common.dll" />
     <Content Include="ThirdParty\SpaceEngiSDK\Sandbox.Game.dll" />

@@ -9,6 +9,34 @@ namespace space_engineers.Common
 {
    class Snippets : MyGridProgram
    {
+      IMyTextPanel m_textPanel;
+
+      //------------------------------------------------------------------------
+      // DrawText
+      //------------------------------------------------------------------------
+
+      private void DrawText ( IMyTextPanel textPanel, String text, bool bNewLine = true )
+      {
+         Echo ( text );
+
+         if ( textPanel != null )
+         {
+            if ( bNewLine )
+            {
+               textPanel.WritePublicText ( text + Environment.NewLine, true );
+            }
+            else
+            {
+               textPanel.WritePublicText ( text, true );
+            }
+         }
+      }
+
+      private void DrawText ( String text, bool bNewLine = true )
+      {
+         DrawText ( m_textPanel, text, bNewLine );
+      }
+
       //------------------------------------------------------------------------
       // GetBlock
       //------------------------------------------------------------------------
@@ -25,31 +53,50 @@ namespace space_engineers.Common
          }
          else
          {
-            Echo ( "Cant find block with name <" + key + ">" );
+            String message = "Cant find block with name <" + key + ">";
 
-            if ( textPanel != null )
+            Echo ( message );
+
+            if ( textPanel == null )
             {
-               //DrawText ( textPanel, "Cant find block with name <" + key + ">" );
+               DrawText ( message );
+            }
+            else
+            {
+               DrawText ( textPanel, message );
             }
          }
 
          return bFoundBlock;
       }
 
-      private void DrawText ( String text, bool bNewLine = true )
+      private bool GetBlock<T> ( List<T> listBlock, IMyTextPanel textPanel = null ) where T : class
       {
-         if ( bNewLine )
+         bool bFoundBlock = false;
+
+         GridTerminalSystem.GetBlocksOfType<T> ( listBlock );
+
+         if ( listBlock.Count > 0 )
          {
-            Echo ( text + Environment.NewLine );
+            bFoundBlock = true;
          }
          else
          {
-            Echo ( text );
+            String message = "Cant find blocks of type <" + typeof ( T ) + ">";
+
+            Echo ( message );
+
+            if ( textPanel == null )
+            {
+               DrawText ( message );
+            }
+            else
+            {
+               DrawText ( textPanel, message );
+            }
          }
 
-         //if ( m_textPanel != null )
-         //{
-         //   m_textPanel.WritePublicText ( text + Environment.NewLine, bNewLine );
-         //}
+         return bFoundBlock;
       }
-   }}
+   }
+}
