@@ -29,7 +29,6 @@ namespace IngameScript
       public void Save ()
       {
       }
-
       public void Main ( string argument, UpdateType updateSource )
       {
          Panic ();
@@ -101,7 +100,7 @@ namespace IngameScript
          {
             if ( thrust.CustomName.ToUpper ().Contains ( "UP" ))
             {
-               thrust.ThrustOverride = 0;
+               thrust.ThrustOverride = 0.0f;
             }
          }
 
@@ -125,8 +124,6 @@ namespace IngameScript
          foreach ( IMyLandingGear landingGear in listOfLandingGear )
          {
             landingGear.AutoLock = true;
-
-            landingGear.Lock ();
          }
       }
    }
