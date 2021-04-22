@@ -21,6 +21,7 @@ namespace space_engineers.Autobuild.StorageManager
          new Computer       ( 15 ),
          new Construction   ( 25 ),
          new Interiorplate  (  6 ),
+         new Explosives     ( 11 ),
          new Girder         (  7 ),
          new LargeSteelTube (  8 ),
          new Motor          (  9 ),
@@ -49,9 +50,14 @@ namespace space_engineers.Autobuild.StorageManager
 
       public void Main ( String argument, UpdateType updateSource )
       {
-         Echo ( "Transfersystem 2000 started" );
-
          Scan ();
+
+         Transfer ();
+      }
+
+      public void Transfer ()
+      {
+         Echo ( "###--- Transfersystem 2000 started" );
 
          GridTerminalSystem.GetBlocksOfType ( ToCargoContainerList, searchItem => searchItem.CustomName.Contains ( tagTo ));
 
@@ -68,25 +74,32 @@ namespace space_engineers.Autobuild.StorageManager
             }
          }
 
-         Echo ( "Transfersystem 2000 finished" );
+         Echo ( "###--- Transfersystem 2000 finished" );
       }
 
       private void Scan ()
       {
+         Echo ( "###--- Inventory scan 3001 started" );
+
          List<IMyCargoContainer> cargoContainerList = new List<IMyCargoContainer>();
 
          GridTerminalSystem.GetBlocksOfType ( cargoContainerList, searchItem => searchItem.CustomName.Contains ( "Test" ));
 
-         List<MyInventoryItem> inventoryItemList = new List<MyInventoryItem> ();
-
-         cargoContainerList[0].GetInventory ().GetItems ( inventoryItemList );
-
-         for ( int nIndex = 0; nIndex < cargoContainerList.Count; nIndex++ )
+         for ( int cargoIndex = 0; cargoIndex < cargoContainerList.Count; cargoIndex++ )
          {
-            MyInventoryItem inventoryItem = inventoryItemList[nIndex];
+            List<MyInventoryItem> inventoryItemList = new List<MyInventoryItem> ();
 
-            Echo ( inventoryItem.Type.TypeId + " - " + inventoryItem.Type.SubtypeId );
+            cargoContainerList[cargoIndex].GetInventory ().GetItems ( inventoryItemList );
+
+            for ( int inventoryItemIndex = 0; inventoryItemIndex < inventoryItemList.Count; inventoryItemIndex++ )
+            {
+               MyInventoryItem inventoryItem = inventoryItemList[inventoryItemIndex];
+
+               Echo ( inventoryItem.Type.TypeId + " - " + inventoryItem.Type.SubtypeId );
+            }
          }
+
+         Echo ( "###--- Inventory scan 3001 finished" );
       }
 
       private void Transfer ( IMyInventory fromInventory, IMyInventory toInventory, Item item )
@@ -118,6 +131,7 @@ namespace space_engineers.Autobuild.StorageManager
       class Display        : Item { public Display        ( int amount ) : base ( amount ) { Type = new MyItemType ( "MyObjectBuilder_Component", "Display"         ); }}
       class Computer       : Item { public Computer       ( int amount ) : base ( amount ) { Type = new MyItemType ( "MyObjectBuilder_Component", "Computer"        ); }}
       class Construction   : Item { public Construction   ( int amount ) : base ( amount ) { Type = new MyItemType ( "MyObjectBuilder_Component", "Construction"    ); }}
+      class Explosives     : Item { public Explosives     ( int amount ) : base ( amount ) { Type = new MyItemType ( "MyObjectBuilder_Component", "Explosives"      ); }}
       class Interiorplate  : Item { public Interiorplate  ( int amount ) : base ( amount ) { Type = new MyItemType ( "MyObjectBuilder_Component", "InteriorPlate"   ); }}
       class Girder         : Item { public Girder         ( int amount ) : base ( amount ) { Type = new MyItemType ( "MyObjectBuilder_Component", "Girder"          ); }}
       class LargeSteelTube : Item { public LargeSteelTube ( int amount ) : base ( amount ) { Type = new MyItemType ( "MyObjectBuilder_Component", "LargeTube"       ); }}
