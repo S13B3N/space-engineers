@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>space_engineers</RootNamespace>
     <AssemblyName>space-engineers</AssemblyName>
-    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -137,10 +138,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autobuild\StorageManager.cs" />
+    <Compile Include="Autobuild\StorageScanner.cs" />
     <Compile Include="Common\CaesarCipher.cs" />
     <Compile Include="Common\Snippets.cs" />
     <Compile Include="Interface\IMainProgram.cs" />
     <Compile Include="Interface\ISmallMainProgram.cs" />
+    <Compile Include="Kenter\Rakete.cs" />
     <Compile Include="Playground\AutoRefinery.cs" />
     <Compile Include="Playground\Refinery.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
