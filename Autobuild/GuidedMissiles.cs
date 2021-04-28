@@ -52,6 +52,8 @@ namespace space_engineers.Autobuild.GuidedMissiles
 
       MissileControl m_missileControl;
 
+      public IMyLargeTurretBase m_remoteTurretBlock;
+
       public Program ()
       {
          m_missileControl = new MissileControl ( this );
@@ -60,9 +62,21 @@ namespace space_engineers.Autobuild.GuidedMissiles
 
          //GridTerminalSystem.GetBlocksOfType<IMyShipController>(TempCollection3, a => a.DetailedInfo != "NoUse");
          GridTerminalSystem.GetBlocksOfType<IMyShipController> ( TempCollection3 );
+
          if ( TempCollection3.Count > 0 )
          {
             m_RC = TempCollection3[0] as IMyShipController;
+         }
+
+         m_remoteTurretBlock = ( IMyLargeTurretBase ) GridTerminalSystem.GetBlockWithName ( "#RemoteTurret#" );
+
+         List<IMyCameraBlock> cameraBlockList = new List<IMyCameraBlock> ();
+
+         GridTerminalSystem.GetBlocksOfType<IMyCameraBlock> ( cameraBlockList );
+
+         if ( cameraBlockList.Count > 0 )
+         {
+            m_TOWCamera = cameraBlockList[0] as IMyCameraBlock;
          }
 
          ThisShipSize = ( Me.CubeGrid.WorldVolume.Radius );
@@ -82,7 +96,7 @@ namespace space_engineers.Autobuild.GuidedMissiles
 
          foreach ( Missile missile in m_missilesAvailable )
          {
-            Echo ( "Missile:" + missile.IsFunctional ());
+            //Echo ( "Missile:" + missile.IsFunctional ());
 
             missile.ThrusterInfo ();
 
@@ -232,7 +246,6 @@ namespace space_engineers.Autobuild.GuidedMissiles
    public class Missile
    {
       public IMyGyro            m_gyroBlock         = null;
-      public IMyLargeTurretBase m_remoteTurretBlock = null;
       public IMyShipMergeBlock  m_mergeBlock        = null;
 
       public List<IMyPowerProducer> m_powerBlock        = new List<IMyPowerProducer> ();
@@ -269,6 +282,7 @@ namespace space_engineers.Autobuild.GuidedMissiles
 
       public void Init ( IMyGridTerminalSystem gridTerminalSystem )
       {
+
          List<IMyTerminalBlock> blockList = new List<IMyTerminalBlock> ();
 
          gridTerminalSystem.GetBlocksOfType<IMyTerminalBlock> ( blockList, searchItem => searchItem.CustomName.Contains ( m_missileTag ));
@@ -279,10 +293,10 @@ namespace space_engineers.Autobuild.GuidedMissiles
             {
                m_gyroBlock = ( IMyGyro ) block;
             }
-            else if (( block is IMyLargeTurretBase ) && ( m_remoteTurretBlock == null ))
-            {
-               //m_remoteTurretBlock = ( IMyLargeTurretBase ) block;
-            }
+            //else if (( block is IMyLargeTurretBase ) && ( m_remoteTurretBlock == null ))
+            //{
+            //   m_remoteTurretBlock = ( IMyLargeTurretBase ) block;
+            //}
             else if (( block is IMyShipMergeBlock ) && ( m_mergeBlock == null ))
             {
                m_mergeBlock = ( IMyShipMergeBlock ) block;
@@ -361,7 +375,6 @@ namespace space_engineers.Autobuild.GuidedMissiles
       public bool IsFunctional ()
       {
          bool HasGyro   = ( m_gyroBlock         != null );
-         bool HasTurret = ( m_remoteTurretBlock != null );
          bool HasMerge  = ( m_mergeBlock        != null );
          bool HasPower  = ( m_powerBlock        != null );
 
@@ -417,11 +430,6 @@ namespace space_engineers.Autobuild.GuidedMissiles
          List<KeyValuePair<Vector3D, ForwardVectorInfo>> vectorList = vectorDict.ToList ();
 
          vectorList.Sort (( item1, item2 ) => item2.Value.m_thrust.CompareTo ( item1.Value.m_thrust ));
-
-         foreach ( var itemX in vectorList )
-         {
-            m_program.Echo ( "X-"+itemX.Value.m_count );
-         }
 
          return vectorList[0].Key;
       }
@@ -574,12 +582,10 @@ namespace space_engineers.Autobuild.GuidedMissiles
       Vector3D EnemyScan ( Missile missile )
       {
          // Guard clause
-         if ( true || missile.m_remoteTurretBlock == null )
+         if ( m_program.m_remoteTurretBlock == null )
          {
             return m_program.m_RC.GetPosition () + m_program.m_RC.WorldMatrix.Forward * (( missile.m_gyroBlock.GetPosition () - m_program.Me.GetPosition ()).Length () + 300 );
          }
-
-         var This_Missile_Director = missile.m_remoteTurretBlock as IMyLargeTurretBase;
 
          var ENEMY_POS = new Vector3D ();
 
@@ -601,9 +607,9 @@ namespace space_engineers.Autobuild.GuidedMissiles
                }
             }
          }
-         else if ( This_Missile_Director.GetTargetedEntity ().IsEmpty () == false && ! ( OverrideToLongTargets && TemporaryTarget.IsEmpty ()))
+         else if ( m_program.m_remoteTurretBlock.GetTargetedEntity ().IsEmpty () == false && !( OverrideToLongTargets && TemporaryTarget.IsEmpty ()))
          {
-            ENEMY_POS = This_Missile_Director.GetTargetedEntity ().Position;
+            ENEMY_POS = m_program.m_remoteTurretBlock.GetTargetedEntity ().Position;
          }
          else
          {
