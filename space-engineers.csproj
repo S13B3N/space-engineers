@@ -138,6 +138,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Autobuild\Gtaling test.cs" />
+    <Compile Include="Autobuild\GuidedMissiles.cs" />
+    <Compile Include="Autobuild\saved.cs" />
+    <Compile Include="Autobuild\StorageManagerComplete.cs" />
     <Compile Include="Autobuild\StorageManager.cs" />
     <Compile Include="Autobuild\StorageScanner.cs" />
     <Compile Include="Common\CaesarCipher.cs" />

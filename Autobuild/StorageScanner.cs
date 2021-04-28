@@ -9,6 +9,11 @@ namespace space_engineers.Autobuild
 {
    public class Program : MyGridProgram, ISmallMainProgram
    {
+      //QueueItem[] m_transferItemList = {
+
+      //   new QueueItem () { Tag = "#ToRefinery", Type = EItemType.Steelplate  , Amount = 15 },
+      //}
+
       List<IMyCargoContainer> CargoContainerList { get; set; }
 
       List<IMyAssembler> AssemblerList { get; set; }

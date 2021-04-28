@@ -61,8 +61,8 @@ namespace space_engineers.Autobuild.StorageManager
       {
          Echo ( "###--- Transfersystem 2000 started" );
 
-         List<IMyCargoContainer> toCargoContainerList   = new List<IMyCargoContainer> ();
-         List<IMyTerminalBlock>  fromCargoContainerList = new List<IMyTerminalBlock>  ();
+         List<IMyTerminalBlock> toCargoContainerList   = new List<IMyTerminalBlock> ();
+         List<IMyTerminalBlock> fromCargoContainerList = new List<IMyTerminalBlock> ();
 
          for ( int nIndex = 0; nIndex < m_transferItemList.Length; nIndex++ )
          {

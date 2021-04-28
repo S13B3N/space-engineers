@@ -328,7 +328,7 @@ namespace space_engineers.Scripts.WelderShip
       {
          DrawText ( "State: WaitForWelderActiviation" );
 
-         if ( m_updateSource == UpdateType.Antenna )
+         if ( m_updateSource == UpdateType.Terminal )
          {
             String message = ReceiveMessage ( m_argument );
 
@@ -413,7 +413,7 @@ namespace space_engineers.Scripts.WelderShip
       {
          int[] shiftBuffer = GetShiftBuffer ( plainMessage, m_secretKey );
 
-         m_radioAntenna.TransmitMessage ( CaesarEncrypt ( plainMessage, shiftBuffer ));
+         //m_radioAntenna.TransmitMessage ( CaesarEncrypt ( plainMessage, shiftBuffer ));
       }
 
       private String ReceiveMessage ( String encryptedMessage )
